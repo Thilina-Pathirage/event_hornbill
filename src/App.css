@@ -1,0 +1,6 @@
+.center{
+  text-align: center !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+}

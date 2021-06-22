@@ -1,0 +1,86 @@
+.outer {
+    z-index: 10;
+    display: table;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+  }
+  
+  .middle {
+    display: table-cell;
+    vertical-align: middle;
+  }
+  
+  .inner {
+    background-color: white;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80vw;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: rgba(126, 70, 255, 0.25) 0px 50px 100px -20px, rgba(69, 48, 255, 0.726) 0px 30px 60px -30px, rgba(64, 50, 255, 0.35) 0px -2px 6px 0px inset;
+  }
+
+  .topic{
+    font-weight: bold;
+    color:#6f00ff;
+  }
+
+  .form-div{
+      margin-top: 40px !important;
+      max-width: 450px !important;
+      margin: auto;
+  }
+
+  .form-control:focus {
+    border-color: #6f00ff !important;
+    box-shadow: rgb(147, 108, 255) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset !important;
+  }
+
+  .label-text{
+      color: #6f00ff;
+  }
+  .form-control{
+      height: 50px;
+      border-radius: 10px !important;
+      box-shadow: rgb(213, 198, 255) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+      border: 0 !important;
+  }
+
+  .my-button{
+    margin-top: -50px;
+    width: 100%;
+    border-radius: 10px !important;
+    height: 50px;
+    
+  }
+
+
+  .btn-grad {
+    background-image: linear-gradient(to right, #6f00ff 0%, #6f00ff  51%, #225dff  100%)
+  }
+
+  .btn-grad {
+    margin: 0px;
+    padding: 15px 45px;
+    text-align: center;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;            
+    border: 0;
+    border-radius: 10px;
+  }
+
+  .btn-grad:hover {
+    background-position: right center; /* change the direction of the change here */
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  @media only screen and (min-width: 600px) {
+    .inner {
+      width: 600px;
+    }
+  }

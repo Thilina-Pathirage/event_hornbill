@@ -1,0 +1,16 @@
+body {
+  background-image: url('./Components/images/background.jpg') !important;
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  font-family: -apple-system, BlinkMacSystemFont, 
+    'Ubuntu',
+    sans-serif !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}

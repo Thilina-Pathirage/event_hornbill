@@ -1,0 +1,45 @@
+.outer2 {
+    z-index: 10;
+    display: table;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+  }
+  
+  .middle2 {
+    display: table-cell;
+    vertical-align: middle;
+  }
+  
+  .inner2 {
+    margin-top: 20px;
+    margin-bottom: 30px; 
+    background-color: white;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80vw;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: rgba(126, 70, 255, 0.25) 0px 50px 100px -20px, rgba(69, 48, 255, 0.726) 0px 30px 60px -30px, rgba(64, 50, 255, 0.35) 0px -2px 6px 0px inset;
+    transition-duration: 0.8s;
+  }
+
+  .inner2:hover{
+    transition-duration: 0.8s;
+    box-shadow: rgba(73, 91, 255, 0.685) 0px 50px 100px -20px, rgba(69, 48, 255, 0.726) 0px 30px 60px -30px, rgba(64, 50, 255, 0.35) 0px -2px 6px 0px inset;
+  }
+
+  .topic2{
+    font-weight: bold;
+    color:#6f00ff;
+    
+  }
+
+
+  @media only screen and (min-width: 600px) {
+    .inner2 {
+      width: 600px;
+    }
+  }

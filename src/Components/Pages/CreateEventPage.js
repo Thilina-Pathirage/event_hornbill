@@ -48,7 +48,7 @@ const CreateNewEvent = () => {
     }
 
     const addToList = () => {
-        Axios.post("http://localhost:3001/", {
+        Axios.post("https://event-portal-thilina.herokuapp.com/", {
             title: title,
             location: location,
             timezone: timezone,
@@ -57,9 +57,11 @@ const CreateNewEvent = () => {
             start_time: start_time,
             end_time: end_time,
             description: description,
-        }).then(
-            window.location.href="/events",
-        )
+        }).then(Redirect);
+    }
+
+    const Redirect = () =>{
+        window.location.href="/events";
     }
 
     return (

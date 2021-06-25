@@ -32,11 +32,11 @@ const CreateNewEvent = () => {
     }
 
     const startTimeHandler = event => {
-        setEndDate(event.target.value);
+        setStartTime(event.target.value);
     }
 
     const endDateHandler = event => {
-        setStartTime(event.target.value);
+        setEndDate(event.target.value);
     }
 
     const endTimeHandler = event => {

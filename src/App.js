@@ -12,7 +12,7 @@ function App() {
     </Route>
 
     <Route path={"/events"} exact>
-      <Events ETitle={"Event Name"}/>
+      <Events/>
     </Route>
     
     <Redirect to={"/"} />
@@ -21,5 +21,4 @@ function App() {
   </Router>
   );
 }
-
 export default App;

@@ -38,6 +38,53 @@
   }
 
 
+
+  .my-button2{
+    width: 25% !important;
+    border-radius: 3px !important;
+    height: 42px;
+    border: 0;
+    margin-left: 10px !important;
+    color: white !important;
+    text-transform: none;
+    text-align: center;
+    line-height: 0;
+  }
+
+  .my-button3{
+    width: 8% !important;
+    border-radius: 3px !important;
+    height: 42px;
+    border: 0;
+    margin-left: 10px !important;
+    color: white !important;
+    text-transform: none;
+    text-align: center;
+    line-height: 0;
+    padding: 5px !important;
+    font-size: 20px !important;
+    transition: 0.8s;
+  }
+
+  .btn-grad2 {
+    transition: 0.5s !important;
+    background-image: linear-gradient(to right, #6f00ff 0%, #6f00ff  51%, #2622ff  100%)
+  }
+
+  .btn-grad2:hover {
+    background-image: linear-gradient(to right, #4400ff 0%, #0004ff  51%, #2622ff  100%)
+  }
+
+
+  .btn-grad3 {
+    transition: 0.5s !important;
+    background-image: linear-gradient(to right, #ff0000 0%, #ff002b  51%, #ff227e  100%)
+  }
+
+  .btn-grad3:hover {
+    background-image: linear-gradient(to right, #ff0000 0%, #ff0000  51%, #ff2222  100%)
+  }
+
   @media only screen and (min-width: 600px) {
     .inner2 {
       width: 600px;

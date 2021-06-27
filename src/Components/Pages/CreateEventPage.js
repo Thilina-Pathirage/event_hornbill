@@ -13,6 +13,7 @@ const CreateNewEvent = () => {
     const [end_date, setEndDate] = useState("");
     const [start_time, setStartTime] = useState("");
     const [end_time, setEndTime] = useState("");
+    const [online_link, setLink] = useState("");
     const [description, setDescription] = useState("");
 
     const titleHandler = event => {
@@ -43,12 +44,16 @@ const CreateNewEvent = () => {
         setEndTime(event.target.value);
     }
 
+    const onlineLinkHandler = event => {
+        setLink(event.target.value);
+    }
+
     const descriptionHandler = event => {
         setDescription(event.target.value);
     }
 
     const addToList = () => {
-        Axios.post("https://event-portal-thilina.herokuapp.com/", {
+        Axios.post("http://localhost:3001/", {
             title: title,
             location: location,
             timezone: timezone,
@@ -56,6 +61,7 @@ const CreateNewEvent = () => {
             end_date: end_date,
             start_time: start_time,
             end_time: end_time,
+            online_link: online_link,
             description: description,
         }).then(Redirect);
     }
@@ -77,7 +83,7 @@ const CreateNewEvent = () => {
                                     <label className="label-text">
                                         Event title here!
                                     </label>
-                                    <input type="text" className="form-control" placeholder="My Event" onChange={titleHandler} />
+                                    <input type="text" className="form-control" placeholder="My Event" onChange={titleHandler} required/>
                                     <br />
                                 </MDBCol>
 
@@ -89,7 +95,7 @@ const CreateNewEvent = () => {
                                     <label className="label-text">
                                         Event location
                                     </label>
-                                    <input type="text" className="form-control" placeholder="Sri Lanka" onChange={locationHandler} />
+                                    <input type="text" className="form-control" placeholder="Sri Lanka" onChange={locationHandler} required/>
                                     <br />
                                 </MDBCol>
 
@@ -97,7 +103,7 @@ const CreateNewEvent = () => {
                                     <label className="label-text">
                                         The timezone
                                     </label>
-                                    <select className="form-control" onChange={timezoneHandler}>
+                                    <select className="form-control" onChange={timezoneHandler} required>
                                         <option> - select - </option>
                                         <option value="Asia/Colombo" >Asia/Colombo</option>
                                     </select>
@@ -111,13 +117,13 @@ const CreateNewEvent = () => {
                                     <label className="label-text">
                                         Start Date
                                     </label>
-                                    <input type="date" className="form-control" onChange={startDateHandler} />
+                                    <input type="date" className="form-control" onChange={startDateHandler} required/>
                                     <br />
 
                                     <label className="label-text">
                                         Start Time
                                     </label>
-                                    <input type="time" className="form-control" onChange={startTimeHandler} />
+                                    <input type="time" className="form-control" onChange={startTimeHandler} required/>
                                     <br />
                                 </MDBCol>
 
@@ -125,14 +131,25 @@ const CreateNewEvent = () => {
                                     <label className="label-text">
                                         End Date
                                     </label>
-                                    <input type="date" className="form-control" onChange={endDateHandler} />
+                                    <input type="date" className="form-control" onChange={endDateHandler} required/>
                                     <br />
 
                                     <label className="label-text">
                                         End Time
                                     </label>
-                                    <input type="time" className="form-control" onChange={endTimeHandler} />
+                                    <input type="time" className="form-control" onChange={endTimeHandler} required/>
                                     <br />
+                                </MDBCol>
+                            </MDBRow>
+
+                            <MDBRow>
+                                <MDBCol>
+                                    <label className="label-text">
+                                        Event link here
+                                    </label>
+                                    <input className="form-control" placeholder="Online Link" onChange={onlineLinkHandler} />
+                                    <br />
+
                                 </MDBCol>
                             </MDBRow>
 
@@ -141,7 +158,7 @@ const CreateNewEvent = () => {
                                     <label className="label-text">
                                         Say something about your event!
                                     </label>
-                                    <textarea className="form-control" placeholder="Woohaaa.." onChange={descriptionHandler}>
+                                    <textarea className="form-control" placeholder="Woohaaa.." onChange={descriptionHandler} required>
                                     </textarea>
                                     <br />
 

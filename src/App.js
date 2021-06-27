@@ -14,7 +14,7 @@ function App() {
     <Route path={"/events"} exact>
       <Events/>
     </Route>
-    
+  
     <Redirect to={"/"} />
     </Switch>
     </main>

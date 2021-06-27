@@ -53,7 +53,7 @@ const CreateNewEvent = () => {
     }
 
     const addToList = () => {
-        Axios.post("http://localhost:3001/", {
+        Axios.post("https://event-portal-thilina.herokuapp.com/", {
             title: title,
             location: location,
             timezone: timezone,

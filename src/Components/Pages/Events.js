@@ -5,16 +5,19 @@ import './Events.css';
 const Events = () => {
 
     const [events, setEvents] = useState([]);
+    
 
     useEffect(() => {
-        Axios.get("https://event-portal-thilina.herokuapp.com/events").then(res => {
+        Axios.get("http://localhost:3001/events").then(res => {
             setEvents(res.data);
         }).catch(err => {
             console.log(err);
-        })
-    }, [])
+        });
+    }, []);
 
-
+    const deleteEvent = (id) => {
+        Axios.delete(`http://localhost:3001/delete/${id}`);
+    }
 
     const eventItem = events.slice(0).reverse().map((i, k) => {
         return (
@@ -36,11 +39,10 @@ const Events = () => {
                         <span className="description">{i.description}</span>
                         <span className="location">{i.location}</span>
                     </div>
-                    {i.online_link ? <a className="btn-grad btn my-button2 " href={i.online_link}>Join now!</a> : ""}
-                    <a className="btn-grad3 btn my-button3 " href> <i className="far fa-trash-alt"></i></a>
+                    {i.online_link ? <a className="btn-grad btn my-button2" href={i.online_link}>Join now!</a> : ""}
+                    <button className="btn-grad3 btn my-button3 " onClick={() => deleteEvent(i._id)}> <i className="far fa-trash-alt"></i></button>
                 </div>
             </div>
-
         );
     })
     return (

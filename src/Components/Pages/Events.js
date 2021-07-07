@@ -8,7 +8,7 @@ const Events = () => {
     
 
     useEffect(() => {
-        Axios.get("http://localhost:3001/events").then(res => {
+        Axios.get("https://event-portal-thilina.herokuapp.com/events").then(res => {
             setEvents(res.data);
         }).catch(err => {
             console.log(err);
@@ -16,7 +16,11 @@ const Events = () => {
     }, []);
 
     const deleteEvent = (id) => {
-        Axios.delete(`http://localhost:3001/delete/${id}`);
+        Axios.delete(`https://event-portal-thilina.herokuapp.com/delete/${id}`).then(Redirect);
+    }
+
+    const Redirect = () =>{
+        window.location.href="/events";
     }
 
     const eventItem = events.slice(0).reverse().map((i, k) => {

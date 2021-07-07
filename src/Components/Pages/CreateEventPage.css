@@ -1,17 +1,8 @@
 .outer {
-    z-index: 10;
-    display: table;
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
+    margin-bottom: 20px;
+    margin-top: 30px;
   }
   
-  .middle {
-    display: table-cell;
-    vertical-align: middle;
-  }
   
   .inner {
     background-color: white;

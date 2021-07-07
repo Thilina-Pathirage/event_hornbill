@@ -1,8 +1,7 @@
 import './CreateEventPage.css';
 import { MDBRow, MDBCol } from 'mdb-react-ui-kit'
 import { useState } from 'react';
-import Axios from 'axios'
-
+import Axios from 'axios';
 
 const CreateNewEvent = () => {
 
@@ -71,6 +70,7 @@ const CreateNewEvent = () => {
     }
 
     return (
+        
         <div className="outer">
             <div className="middle">
                 <div className="inner">

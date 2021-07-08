@@ -66,7 +66,7 @@ const CreateNewEvent = () => {
     }
 
     const Redirect = () =>{
-        window.location.href="/events";
+        window.location.href="/";
     }
 
     return (

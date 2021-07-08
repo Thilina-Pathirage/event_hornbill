@@ -26,8 +26,8 @@ const Events = () => {
     const eventItem = events.slice(0).reverse().map((i, k) => {
         return (
 
-            <div>
-                <div className="inner2" key={k}>
+            <div key={k}>
+                <div className="inner2" >
                     <h3 className="topic2">{i.title}</h3>
                     <br />
                     <h5>{i.start_date} @ {i.start_time} in {i.location}</h5>

@@ -1,37 +1,59 @@
-.nav-button {
-    transition: 0.5s !important;
-    box-shadow: rgb(213, 198, 255) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
-    border: none;
-    color: #6f00ff;
-    height: 50px;
-    margin: 10px;
-    border-radius: 10px;
-    width: 200px;
-    font-weight: bold;
+  .nav-outer{
+    border-bottom: solid #00FFFF 1px;
+    border-left: solid #00FFFF 1px;
+    width: 100%;
+    margin: auto;
+    font-family: Spirax;
+    padding-top: 3%;
+    padding-bottom: 3%;
+    border-radius: 0px 0px 0px 25px;
   }
 
-  .nav-button:hover {
-    background-color: #6f00ff;
+  .nav-outer h1{
+    font-size: 60px;
     color: white;
-    box-shadow: unset;
+
   }
 
-  .nav {
-
-    z-index: 10 !important;
-    background-color: white;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 20px;
-    width: 40vw;
-    padding: 10px;
-    border-radius: 20px;
-    box-shadow: rgba(126, 70, 255, 0.25) 0px 50px 100px -20px, rgba(69, 48, 255, 0.726) 0px 30px 60px -30px, rgba(64, 50, 255, 0.35) 0px -2px 6px 0px inset;
-    transition-duration: 0.8s;
+  .cu-nav-items{
+    list-style: none;
+    display: flex;
+    margin-top: -12px;
+    margin-left: 60%;
   }
 
-  @media only screen and (min-width: 600px) {
-    .nav {
-      width: 600px;
+  .cu-item{
+    padding-left: 10px;
+    background-color: black;
+    padding-right: 10px;
+  }
+
+  .cu-item a{
+    color: white;
+    font-weight: bold;
+    transition-duration: 0.4s;
+  }
+
+  .cu-item a:hover{
+    color: #00FFFF;
+    text-decoration: none;
+  }
+
+
+  .fa-user-circle{
+    color: #00FFFF;
+    font-size: 40px;
+  }
+
+  @media only screen and (max-width: 800px) {
+    .cu-nav-items {
+      margin-left: 40%;
     }
   }
+
+  @media only screen and (max-width: 500px) {
+    .cu-nav-items {
+      margin-left: 20%;
+    }
+  }
+  

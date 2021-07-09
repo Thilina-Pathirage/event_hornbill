@@ -1,92 +1,113 @@
-.outer2 {
-    z-index: 10;
-    display: table;
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-  }
-  
-  .middle2 {
-    display: table-cell;
-    vertical-align: middle;
-  }
-  
-  .inner2 {
-    margin-top: 20px;
-    margin-bottom: 30px; 
-    background-color: white;
-    margin-left: auto;
-    margin-right: auto;
-    width: 80vw;
-    padding: 40px;
-    border-radius: 20px;
-    box-shadow: rgba(126, 70, 255, 0.25) 0px 50px 100px -20px, rgba(69, 48, 255, 0.726) 0px 30px 60px -30px, rgba(64, 50, 255, 0.35) 0px -2px 6px 0px inset;
-    transition-duration: 0.8s;
-  }
+.inner2 {
+  width: 100%;
+  margin: auto;
+  border: solid white 1px ;
+  padding-left: 20%;
 
-  .inner2:hover{
-    transition-duration: 0.8s;
-    box-shadow: rgba(73, 91, 255, 0.685) 0px 50px 100px -20px, rgba(69, 48, 255, 0.726) 0px 30px 60px -30px, rgba(64, 50, 255, 0.35) 0px -2px 6px 0px inset;
-  }
-
-  .topic2{
-    font-weight: bold;
-    color:#6f00ff;
-    
-  }
-
-
-
-  .my-button2{
-    width: 25% !important;
-    border-radius: 3px !important;
-    height: 42px;
-    border: 0;
-    margin-left: 10px !important;
-    color: white !important;
-    text-transform: none;
-    text-align: center;
-    line-height: 0;
-  }
-
-  .my-button3{
-    width: 8% !important;
-    border-radius: 3px !important;
-    height: 42px;
-    border: 0;
-    margin-left: 10px !important;
-    color: white !important;
-    text-transform: none;
-    text-align: center;
-    line-height: 0;
-    padding: 5px !important;
-    font-size: 20px !important;
-    transition: 0.8s;
-  }
-
-  .btn-grad2 {
-    transition: 0.5s !important;
-    background-image: linear-gradient(to right, #6f00ff 0%, #6f00ff  51%, #2622ff  100%)
-  }
-
-  .btn-grad2:hover {
-    background-image: linear-gradient(to right, #4400ff 0%, #0004ff  51%, #2622ff  100%)
-  }
-
-
-  .btn-grad3 {
-    transition: 0.5s !important;
-    background-image: linear-gradient(to right, #ff0000 0%, #ff002b  51%, #ff227e  100%)
-  }
-
-  .btn-grad3:hover {
-    background-image: linear-gradient(to right, #ff0000 0%, #ff0000  51%, #ff2222  100%)
-  }
+}
 
   @media only screen and (min-width: 600px) {
     .inner2 {
       width: 600px;
     }
+  }
+
+  .event-card {
+    width: 70%;
+    margin: auto;
+    background-image: linear-gradient(90deg , rgba(0, 0, 0, 0), rgba(4, 80, 70, 0) , #00ffffb2);
+    border-radius: 20px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+  }
+
+ .col-two{
+   color: white;
+  
+ }
+
+  .event-cover img{
+    width: 250px;
+    border-radius: 20px;
+    border: solid #00FFFF 2px;
+    margin: 20px;
+    max-width: unset !important;
+    transition-duration: 0.5s;
+    filter: grayscale(10);
+  }
+
+  .card-body{
+    padding-left: 0 !important;
+    padding-right: 2.0rem !important;
+    margin-bottom: 20px !important;
+  }
+
+  .event-card :hover .event-cover img{
+    filter: grayscale(0);
+  }
+
+  @media only screen and (max-width: 500px) {
+    .event-cover img {
+      width: 200px;
+    }
+  }
+  
+  @media only screen and (max-width: 400px) {
+    .event-cover img {
+      width: 160px;
+    }
+  }
+  
+  @media only screen and (max-width: 350px) {
+    .event-cover img {
+      width: 120px;
+    }
+  }
+
+  @media only screen and (max-width: 991px) {
+    .col-two{
+      margin: 20px;
+    }
+  }
+  
+
+  .addeventatc{
+    background-color: #00FFFF !important;
+  }
+
+
+  .my-button2 {
+    padding: 8px;
+    text-decoration: none;
+    color: #00FFFF !important;
+    border: solid #00FFFF 2px;
+    font-weight: bold;
+    border-radius: 3px;
+    transition-duration: 0.5s;
+    margin: 5px;
+    display: inline-block;
+    cursor: pointer;
+  }
+
+  .my-button2:hover {
+    text-decoration: none !important;
+    border: solid #00000000 2px;
+  }
+
+  .add-button{
+    padding: 8px;
+    text-decoration: none;
+    color: #000 !important;
+    background-color: #00FFFF;
+    font-weight: bold;
+    border-radius: 3px;
+    transition-duration: 0.5s;
+    margin: 5px;
+    cursor: pointer;
+    display: inline-block;
+  }
+
+  .add-button:hover{
+    text-decoration: none;
+    background-color: #00d8d8 !important;
   }

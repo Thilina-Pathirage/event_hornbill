@@ -1,12 +1,13 @@
 import Axios from 'axios';
 import React, { useState, useEffect } from 'react';
+import { MDBCol, MDBRow, MDBCardImage, MDBCardBody, MDBCardTitle, MDBCardText } from 'mdb-react-ui-kit';
 import './Events.css';
+import { Link } from 'react-router-dom';
+import CoverImage from '../images/eventcover.png'; // Tell Webpack this JS file uses this image
 
 const Events = () => {
 
     const [events, setEvents] = useState([]);
-    
-
     useEffect(() => {
         Axios.get("https://event-portal-thilina.herokuapp.com/events").then(res => {
             setEvents(res.data);
@@ -19,32 +20,41 @@ const Events = () => {
         Axios.delete(`https://event-portal-thilina.herokuapp.com/delete/${id}`).then(Redirect);
     }
 
-    const Redirect = () =>{
-        window.location.href="/events";
+    const Redirect = () => {
+        window.location.href = "/events";
+    }
+
+    const addEvent = (title) => {
+        window.location.href = `https://calendar.google.com/calendar/u/0/r/eventedit?text=${title}&dates=20210721T220000/20210722T230000&ctz=Asia/Colombo&details=In+publishing+and+graphic+design,+Lorem+ipsum+is+a+placeholder+text+commonly+used+to+demonstrate+the+visual+form+of+a+document+or+a+typeface+without+relying+on+meaningful+content.&location=Sri+Lanka&pli=1&uid=1625852590addeventcom&sf=true&output=xml`;
     }
 
     const eventItem = events.slice(0).reverse().map((i, k) => {
         return (
 
             <div key={k}>
-                <div className="inner2" >
-                    <h3 className="topic2">{i.title}</h3>
-                    <br />
-                    <h5>{i.start_date} @ {i.start_time} in {i.location}</h5>
-                    <p>
-                        {i.description}
-                    </p>
-                    <div title="Add to Calendar" className="addeventatc">
-                        Add to Calendar
-                        <span className="start">{i.start_date} {i.start_time}</span>
-                        <span className="end">{i.end_date} {i.end_time}</span>
-                        <span className="timezone">{i.timezone}</span>
-                        <span className="title">{i.title}</span>
-                        <span className="description">{i.description}</span>
-                        <span className="location">{i.location}</span>
-                    </div>
-                    {i.online_link ? <a className="btn-grad btn my-button2" href={i.online_link}>Join now!</a> : ""}
-                    <button className="btn-grad3 btn my-button3 " onClick={() => deleteEvent(i._id)}> <i className="far fa-trash-alt"></i></button>
+                <div className="event-card">
+                    <MDBRow>
+                        <MDBCol className="col-one center col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6" md="3">
+                            <div className="event-cover img-fluid" >
+                                <MDBCardImage alt="event cover" className="img-fluid" src={CoverImage} />
+                            </div>
+                        </MDBCol>
+                        <MDBCol className="col-two col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6" md="9">
+                            <MDBCardBody className="card-body">
+                                <MDBCardTitle>{i.title}</MDBCardTitle>
+
+                                <MDBCardText>
+                                    <small>{i.start_date} @ {i.start_time} in {i.location}</small>
+                                </MDBCardText>
+                                <MDBCardText>
+                                    {i.description}
+                                </MDBCardText>
+                                <Link to="" className="add-button" onClick={() => addEvent(i.title)}>Add to Calendar</Link>
+                                {i.online_link ? <a className="my-button2" href={i.online_link}>Join now!</a> : ""}
+                                <Link to="" className="my-button2" onClick={() => deleteEvent(i._id)}>Delete</Link>
+                            </MDBCardBody>
+                        </MDBCol>
+                    </MDBRow>
                 </div>
             </div>
         );

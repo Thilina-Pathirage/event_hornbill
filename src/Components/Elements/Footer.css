@@ -1,0 +1,39 @@
+.my-footer{
+    margin-top: 50px !important;
+    margin-bottom: 50px !important;
+    border-top: solid #00FFFF 1px;
+    width: 100%;
+    margin: auto;
+    font-family: Spirax;
+    padding-top: 3%;
+    padding-bottom: 3%;
+    border-radius: 25px;
+    margin-top: -16px !important;
+}
+
+.fab{
+    color: #00FFFF;
+    font-size: 25px;
+    margin-left: 10px;
+    margin-right: 10px;
+    float: right;
+}
+
+.social-icons{
+    margin-right: 2%;
+}
+
+.copyright{
+    color: white;
+    font-family: poppins;
+    background-color: black;
+    width: 100%;
+    margin: auto;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.copyright-para{
+    text-align: center;
+    margin-top: 10% !important;
+}

@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Redirect, Route, Switch } from 'react-router-d
 import CreateNewEvent from './Components/Pages/CreateEventPage';
 import Navbar from './Components/Elements/Navbar';
 import { MDBContainer } from 'mdb-react-ui-kit'
+import Footer from './Components/Elements/Footer';
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
             </Switch>
           </div>
         </main>
+        <Footer />
       </MDBContainer>
     </Router>
 

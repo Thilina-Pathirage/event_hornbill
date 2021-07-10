@@ -5,6 +5,12 @@
   align-items: center !important;
 }
 
+.center-no-text{
+	display: flex !important;
+	justify-content: center !important;
+	align-items: center !important;
+  }
+
 .blur-container{
   border: solid #00FFFF 1px;
   width: 100%;

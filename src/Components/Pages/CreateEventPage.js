@@ -1,6 +1,7 @@
 import './CreateEventPage.css';
 import { MDBRow, MDBCol } from 'mdb-react-ui-kit'
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import Axios from 'axios';
 
 const CreateNewEvent = () => {
@@ -52,6 +53,7 @@ const CreateNewEvent = () => {
     }
 
     const addToList = () => {
+
         Axios.post("https://event-portal-thilina.herokuapp.com/", {
             title: title,
             location: location,
@@ -65,112 +67,101 @@ const CreateNewEvent = () => {
         }).then(Redirect);
     }
 
-    const Redirect = () =>{
-        window.location.href="/";
+    const Redirect = () => {
+        window.location.href = "/";
     }
 
     return (
-        
-        <div className="outer">
-            <div className="middle">
-                <div className="inner">
-                    <h2 className="center topic">Create New Event</h2>
-                    <div className="form-div">
-                        <form>
+        <div className="form-card center-no-text">
+            <div className="form-div">
+                <form>
+                    <MDBRow>
+                        <MDBCol>
+                            <label className="label-text">
+                                Event title here!
+                            </label>
+                            <input type="text" className="form-control" placeholder="My Event" onChange={titleHandler} required />
+                            <br />
+                        </MDBCol>
 
-                            <MDBRow>
-                                <MDBCol>
-                                    <label className="label-text">
-                                        Event title here!
-                                    </label>
-                                    <input type="text" className="form-control" placeholder="My Event" onChange={titleHandler} required/>
-                                    <br />
-                                </MDBCol>
+                    </MDBRow>
 
-                            </MDBRow>
+                    <MDBRow>
+                        <MDBCol>
+                            <label className="label-text">
+                                Event location
+                            </label>
+                            <input type="text" className="form-control" placeholder="Sri Lanka" onChange={locationHandler} required />
+                            <br />
+                        </MDBCol>
 
-                            <MDBRow>
-                                <MDBCol>
+                        <MDBCol>
+                            <label className="label-text">
+                                The timezone
+                            </label>
+                            <select className="form-control" onChange={timezoneHandler} required>
+                                <option> - select - </option>
+                                <option value="Asia/Colombo" >Asia/Colombo</option>
+                            </select>
+                            <br />
+                        </MDBCol>
+                    </MDBRow>
 
-                                    <label className="label-text">
-                                        Event location
-                                    </label>
-                                    <input type="text" className="form-control" placeholder="Sri Lanka" onChange={locationHandler} required/>
-                                    <br />
-                                </MDBCol>
+                    <MDBRow>
+                        <MDBCol>
+                            <label className="label-text">
+                                Start Date
+                            </label>
+                            <input type="date" className="form-control" onChange={startDateHandler} required />
+                            <br />
 
-                                <MDBCol>
-                                    <label className="label-text">
-                                        The timezone
-                                    </label>
-                                    <select className="form-control" onChange={timezoneHandler} required>
-                                        <option> - select - </option>
-                                        <option value="Asia/Colombo" >Asia/Colombo</option>
-                                    </select>
-                                    <br />
-                                </MDBCol>
+                            <label className="label-text">
+                                Start Time
+                            </label>
+                            <input type="time" className="form-control" onChange={startTimeHandler} required />
+                            <br />
+                        </MDBCol>
 
-                            </MDBRow>
+                        <MDBCol>
+                            <label className="label-text">
+                                End Date
+                            </label>
+                            <input type="date" className="form-control" onChange={endDateHandler} required />
+                            <br />
 
-                            <MDBRow>
-                                <MDBCol>
-                                    <label className="label-text">
-                                        Start Date
-                                    </label>
-                                    <input type="date" className="form-control" onChange={startDateHandler} required/>
-                                    <br />
+                            <label className="label-text">
+                                End Time
+                            </label>
+                            <input type="time" className="form-control" onChange={endTimeHandler} required />
+                            <br />
+                        </MDBCol>
+                    </MDBRow>
 
-                                    <label className="label-text">
-                                        Start Time
-                                    </label>
-                                    <input type="time" className="form-control" onChange={startTimeHandler} required/>
-                                    <br />
-                                </MDBCol>
+                    <MDBRow>
+                        <MDBCol>
+                            <label className="label-text">
+                                Event link here
+                            </label>
+                            <input className="form-control" placeholder="Online Link" onChange={onlineLinkHandler} />
+                            <br />
+                        </MDBCol>
+                    </MDBRow>
 
-                                <MDBCol>
-                                    <label className="label-text">
-                                        End Date
-                                    </label>
-                                    <input type="date" className="form-control" onChange={endDateHandler} required/>
-                                    <br />
-
-                                    <label className="label-text">
-                                        End Time
-                                    </label>
-                                    <input type="time" className="form-control" onChange={endTimeHandler} required/>
-                                    <br />
-                                </MDBCol>
-                            </MDBRow>
-
-                            <MDBRow>
-                                <MDBCol>
-                                    <label className="label-text">
-                                        Event link here
-                                    </label>
-                                    <input className="form-control" placeholder="Online Link" onChange={onlineLinkHandler} />
-                                    <br />
-
-                                </MDBCol>
-                            </MDBRow>
-
-                            <MDBRow>
-                                <MDBCol>
-                                    <label className="label-text">
-                                        Say something about your event!
-                                    </label>
-                                    <textarea className="form-control" placeholder="Woohaaa.." onChange={descriptionHandler} required>
-                                    </textarea>
-                                    <br />
-
-                                </MDBCol>
-                            </MDBRow>
-                        </form>
-                        <button className="btn-grad my-button" onClick={addToList}>Create Now!</button>
-                    </div>
-                </div>
+                    <MDBRow>
+                        <MDBCol>
+                            <label className="label-text">
+                                Say something about your event!
+                            </label>
+                            <textarea className="form-control" placeholder="Woohaaa.." onChange={descriptionHandler} required>
+                            </textarea>
+                            <br />
+                        </MDBCol>
+                    </MDBRow>
+                    <Link to="" className="create-button center" onClick={addToList}>Create Now!</Link>
+                </form>
             </div>
         </div>
-    );
+    ); 
 }
 
-export default CreateNewEvent
+export default CreateNewEvent;

@@ -1,3 +1,5 @@
+
+
 /*
 
 .outer {
@@ -87,18 +89,16 @@
 .label-text {
     color: white;
 }
-
-.form-control:focus {
-  border-color: #f7f7f7 !important;
-}
-
 .form-control {
     background-color: unset !important;
     height: 50px !important;
     border-radius: 7px !important;
-    border: solid #00FFFF 1px !important;
 }
 
+
+.form-control:focus {
+  outline: none !important;
+}
 
 
 .form-card {
@@ -115,6 +115,7 @@
 
 .create-button{
   padding: 8px;
+  width: 100% !important;
   text-decoration: none;
   color: #000 !important;
   background-color: #00FFFF;
@@ -123,10 +124,39 @@
   transition-duration: 0.5s;
   margin: 5px;
   cursor: pointer;
+  border: solid #00FFFF 1px !important;
   display: inline-block;
+
 }
 
 .create-button:hover{
   text-decoration: none;
-  background-color: #00d8d8 !important;
+  background-color: unset !important;
+  color: #00FFFF !important;
 }
+
+  textarea:focus,
+  input[type="text"]:focus,
+  input[type="password"]:focus,
+  input[type="datetime"]:focus,
+  input[type="datetime-local"]:focus,
+  input[type="date"]:focus,
+  input[type="month"]:focus,
+  input[type="time"]:focus,
+  input[type="week"]:focus,
+  input[type="number"]:focus,
+  input[type="email"]:focus,
+  input[type="url"]:focus,
+  input[type="search"]:focus,
+  input[type="tel"]:focus,
+  input[type="color"]:focus,
+  select:focus,
+  .uneditable-input:focus {   
+    border-color: #00FFFF !important;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px #00FFFF !important;
+    outline: 0 none !important;
+  }
+
+  input, textarea{
+    color: #00FFFF !important;
+  }

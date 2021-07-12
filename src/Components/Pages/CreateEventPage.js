@@ -1,7 +1,6 @@
 import './CreateEventPage.css';
 import { MDBRow, MDBCol } from 'mdb-react-ui-kit'
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
 import Axios from 'axios';
 
 const CreateNewEvent = () => {
@@ -74,7 +73,7 @@ const CreateNewEvent = () => {
     return (
         <div className="form-card center-no-text">
             <div className="form-div">
-                <form>
+                <form onSubmit={addToList}>
                     <MDBRow>
                         <MDBCol>
                             <label className="label-text">
@@ -142,7 +141,7 @@ const CreateNewEvent = () => {
                             <label className="label-text">
                                 Event link here
                             </label>
-                            <input className="form-control" placeholder="Online Link" onChange={onlineLinkHandler} />
+                            <input type="text" className="form-control" placeholder="Online Link" onChange={onlineLinkHandler}  required />
                             <br />
                         </MDBCol>
                     </MDBRow>
@@ -157,7 +156,7 @@ const CreateNewEvent = () => {
                             <br />
                         </MDBCol>
                     </MDBRow>
-                    <Link to="" className="create-button center" onClick={addToList}>Create Now!</Link>
+                    <input className="create-button center" type="submit" value="Create Now!" />
                 </form>
             </div>
         </div>

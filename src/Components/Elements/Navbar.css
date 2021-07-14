@@ -1,6 +1,5 @@
   .nav-outer{
-    border-bottom: solid #00FFFF 1px;
-    border-left: solid #00FFFF 1px;
+    
     width: 100%;
     margin: auto;
     font-family: Spirax;
@@ -40,7 +39,6 @@
 
 
   .fa-user-circle{
-    color: #00FFFF;
     font-size: 40px;
   }
 

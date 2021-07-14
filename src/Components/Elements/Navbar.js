@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './Navbar.css';
-const Navbar = () => {
+const Navbar = props => {
 
     const Redirect = () => {
         window.location.href = "/";
@@ -14,8 +14,20 @@ const Navbar = () => {
 
     return (
         <div>
-            <div className="d2 nav-outer center">
-                <h1>Event Hornbill <i className="far fa-user-circle"></i></h1>
+            <div className="d2 nav-outer center"
+                style={{
+                    borderBottom: `solid ${props.MainColor} 1px`,
+                    borderLeft: `solid ${props.MainColor} 1px`,
+                    transitionDuration: "0.5s"
+                }}
+            >
+                <h1>Event Hornbill <i className="far fa-user-circle"
+                    style={{
+                        color: `${props.MainColor}`,
+                        transitionDuration: "0.5s"
+                        ,
+                    }}
+                ></i></h1>
             </div>
             <ul className="cu-nav-items" >
                 <li className="cu-item">

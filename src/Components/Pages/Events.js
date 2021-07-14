@@ -5,28 +5,31 @@ import './Events.css';
 import { Link } from 'react-router-dom';
 import CoverImage from '../images/eventcover.png';
 import { makeStyles } from '@material-ui/core/styles';
+import Navbar from '../Elements/Navbar';
 
 const Events = () => {
-    
+
     const [bgColor, setBgColor] = useState("0, 0, 0,");
     const [opacity, setOpacity] = useState(1);
+    const [mainColor, setMainColor ] = useState("#00FFFF");
 
-    const useStyles = makeStyles (() => ({
+    const useStyles = makeStyles(() => ({
 
         "@global": {
-          body: {
-            backgroundImage: `linear-gradient(to left, #000,#000, #000, rgb(0, 0, 0, 0) )`,
-            backgroundColor: `rgb( ${bgColor} ${opacity})`,
-            transitionDuration: "0.5s",
-          },
+            body: {
+                backgroundImage: `linear-gradient(to left, #000,#000, #000, rgb(0, 0, 0, 0) )`,
+                backgroundColor: `rgb( ${bgColor} ${opacity})`,
+                transitionDuration: "0.5s",
+            },
         },
     }))
 
     const classes = useStyles();
 
-    const setStyles = (Opc,bg) => {
-         setBgColor(bg);
+    const setStyles = (Opc, bg, mColor) => {
+        setBgColor(bg);
         setOpacity(Opc)
+        setMainColor(mColor)
     }
 
     const [events, setEvents] = useState([]);
@@ -71,10 +74,10 @@ const Events = () => {
                                 <MDBCardText>
                                     {i.description}
                                 </MDBCardText>
-                                <Link onMouseEnter={() => {setStyles(1, "0, 59, 187,")}} onMouseLeave={() => {setStyles(1,"0, 0, 0,")}} to="" className="add-button" onClick={() => addEvent(i.title)}>Add to Calendar</Link>
-                                {i.online_link ? <a onMouseEnter={() => {setStyles(1, "6, 187, 0,")}} onMouseLeave={() => {setStyles(1,"0, 0, 0,")}}  className="my-button2" href={i.online_link}>Join now!</a> : ""}
-                                <Link onMouseEnter={() => {setStyles(1, "255, 123, 0,")}} onMouseLeave={() => {setStyles(1,"0, 0, 0,")}}  to="" className="my-button2" onClick={() => deleteEvent(i._id)}>Delete</Link>
-                            
+                                <Link onMouseEnter={() => { setStyles(1, "0, 59, 187,", "rgb(0, 59, 187)") }} onMouseLeave={() => { setStyles(1, "0, 0, 0,", "#00FFFF") }} to="" className="add-button" onClick={() => addEvent(i.title)}>Add to Calendar</Link>
+                                {i.online_link ? <a onMouseEnter={() => { setStyles(1, "6, 187, 0,", "rgb(6, 187, 0)") }} onMouseLeave={() => { setStyles(1, "0, 0, 0,", "#00FFFF") }} className="my-button2" href={i.online_link}>Join now!</a> : ""}
+                                <Link onMouseEnter={() => { setStyles(1, "255, 123, 0,", "rgb(255, 123, 0)") }} onMouseLeave={() => { setStyles(1, "0, 0, 0,", "#00FFFF") }} to="" className="my-button2" onClick={() => deleteEvent(i._id)}>Delete</Link>
+
                             </MDBCardBody>
                         </MDBCol>
                     </MDBRow>
@@ -84,10 +87,17 @@ const Events = () => {
     })
 
     return (
-        <div className={classes.testDiv} >
-            <br />
-            {eventItem}
-        </div>
+
+        <React.Fragment>
+            <Navbar MainColor={mainColor} />
+            <div className="blur-container">
+
+                <div className={classes.testDiv} >
+                    <br />
+                    {eventItem}
+                </div>
+            </div>
+        </React.Fragment>
     );
 }
 

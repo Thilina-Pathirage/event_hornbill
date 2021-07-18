@@ -33,7 +33,21 @@ const Events = () => {
         blurContainer: {
             border: `solid rgb( ${bgColorCard} 1) 1px`,
             transitionDuration: "0.5s",
+        },
+        addButton: {
+            backgroundColor: `${mainColor}`,
+            border: `solid ${mainColor} 2px`
+        },
+        Button2: {
+            color: `${mainColor} !important`,
+            border: `solid ${mainColor} 2px`
+        },
+        Button3: {
+            color: `${mainColor} !important`,
+            border: `solid ${mainColor} 2px`
         }
+
+
 
 
     }))
@@ -89,9 +103,9 @@ const Events = () => {
                                 <MDBCardText>
                                     {i.description}
                                 </MDBCardText>
-                                <Link onMouseEnter={() => { setStyles(1, "89, 198, 255,", "rgb(89, 198, 255)","89, 198, 255,") }} onMouseLeave={() => { setStyles(1, "0, 0, 0,", "#00FFFF", "0, 247, 255,") }} to="" className="add-button" onClick={() => addEvent(i.title)}>Add to Calendar</Link>
-                                {i.online_link ? <a onMouseEnter={() => { setStyles(1, "0, 255, 172,", "rgb(0, 255, 172)","0, 255, 172,") }} onMouseLeave={() => { setStyles(1, "0, 0, 0,", "#00FFFF", "0, 247, 255,") }} className="my-button2" href={i.online_link}>Join now!</a> : ""}
-                                <Link onMouseEnter={() => { setStyles(1, "255, 234, 161,", "rgb(255, 234, 161)","255, 234, 161,") }} onMouseLeave={() => { setStyles(1, "0, 0, 0,", "#00FFFF", "0, 247, 255,") }} to="" className="my-button3" onClick={() => deleteEvent(i._id)}>Delete</Link>
+                                <Link onMouseEnter={() => { setStyles(1, "89, 198, 255,", "rgb(89, 198, 255)","89, 198, 255,") }} onMouseLeave={() => { setStyles(1, "0, 0, 0,", "#00FFFF", "0, 247, 255,") }} to="" id="add-button" className={classes.addButton} onClick={() => addEvent(i.title)}>Add to Calendar</Link>
+                                {i.online_link ? <a onMouseEnter={() => { setStyles(1, "0, 255, 172,", "rgb(0, 255, 172)","0, 255, 172,") }} onMouseLeave={() => { setStyles(1, "0, 0, 0,", "#00FFFF", "0, 247, 255,") }} id="my-button2" className={classes.Button2} href={i.online_link}>Join now!</a> : ""}
+                                <Link onMouseEnter={() => { setStyles(1, "255, 234, 161,", "rgb(255, 234, 161)","255, 234, 161,") }} onMouseLeave={() => { setStyles(1, "0, 0, 0,", "#00FFFF", "0, 247, 255,") }} to="" id="my-button3" className={classes.Button3} onClick={() => deleteEvent(i._id)}>Delete</Link>
                             </MDBCardBody>
                         </MDBCol>
                     </MDBRow>

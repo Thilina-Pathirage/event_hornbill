@@ -11,7 +11,6 @@ const Navbar = props => {
         window.location.href = "/create";
     }
 
-
     return (
         <div>
             <div className="d2 nav-outer center"

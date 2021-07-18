@@ -73,11 +73,9 @@
     background-color: #00FFFF !important;
   }
 
-  .my-button2 {
+  #my-button2 {
     padding: 8px;
     text-decoration: none;
-    color: #00FFFF !important;
-    border: solid #00FFFF 2px;
     font-weight: bold;
     border-radius: 3px;
     transition-duration: 0.5s;
@@ -88,14 +86,13 @@
 
   .my-button2:hover {
     text-decoration: none !important;
-    border: solid #00000000 2px;
+    border: solid #00000000 2px !important;
   }
 
-  .my-button3 {
+  #my-button3 {
     padding: 8px;
     text-decoration: none;
-    color: #00FFFF !important;
-    border: solid #00FFFF 2px;
+    
     font-weight: bold;
     border-radius: 3px;
     transition-duration: 0.5s;
@@ -109,11 +106,10 @@
     border: solid #00000000 2px;
   }
 
-  .add-button{
+  #add-button{
     padding: 8px;
     text-decoration: none;
     color: #000 !important;
-    background-color: #00FFFF;
     font-weight: bold;
     border-radius: 3px;
     transition-duration: 0.5s;
@@ -122,11 +118,7 @@
     display: inline-block;
   }
 
-  .add-button:hover{
-    text-decoration: none;
-    background-color: #00d8d8 !important;
-  }
 
   .event-cover img:hover {
-    border: solid #ff0000 2px !important;
+    border: solid #ffffff 2px !important;
   }

@@ -3,7 +3,6 @@ import Events from './Components/Pages/Events';
 import { BrowserRouter as Router, Redirect, Route, Switch } from 'react-router-dom';
 import CreateNewEvent from './Components/Pages/CreateEventPage';
 import { MDBContainer } from 'mdb-react-ui-kit'
-import Footer from './Components/Elements/Footer';
 
 function App() {
   return (
@@ -22,7 +21,6 @@ function App() {
               <Redirect to={"/"} />
             </Switch>
         </main>
-        <Footer />
       </MDBContainer>
     </Router>
 

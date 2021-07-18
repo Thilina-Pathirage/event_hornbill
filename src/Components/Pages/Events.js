@@ -6,12 +6,15 @@ import { Link } from 'react-router-dom';
 import CoverImage from '../images/eventcover.png';
 import { makeStyles } from '@material-ui/core/styles';
 import Navbar from '../Elements/Navbar';
+import Footer from '../Elements/Footer';
 
 const Events = () => {
 
     const [bgColor, setBgColor] = useState("0, 0, 0,");
+    const [bgColorCard, setBgColorCard] = useState("0, 247, 255,");
+
     const [opacity, setOpacity] = useState(1);
-    const [mainColor, setMainColor ] = useState("#00FFFF");
+    const [mainColor, setMainColor] = useState("#00FFFF");
 
     const useStyles = makeStyles(() => ({
 
@@ -22,14 +25,26 @@ const Events = () => {
                 transitionDuration: "0.5s",
             },
         },
+        eventCard: {
+            backgroundImage: `linear-gradient(90deg , #000,#000, #000, rgb(0, 0, 0, 0) )`,
+            backgroundColor: `rgb( ${bgColorCard} ${opacity})`,
+            transitionDuration: "0.5s",
+        },
+        blurContainer: {
+            border: `solid rgb( ${bgColorCard} 1) 1px`,
+            transitionDuration: "0.5s",
+        }
+
+
     }))
 
     const classes = useStyles();
 
-    const setStyles = (Opc, bg, mColor) => {
+    const setStyles = (Opc, bg, mColor, bgCard) => {
         setBgColor(bg);
-        setOpacity(Opc)
-        setMainColor(mColor)
+        setOpacity(Opc);
+        setMainColor(mColor);
+        setBgColorCard(bgCard);
     }
 
     const [events, setEvents] = useState([]);
@@ -57,7 +72,7 @@ const Events = () => {
         return (
 
             <div key={k}>
-                <div className="event-card" id="event-card" >
+                <div className={classes.eventCard} id="event-card">
                     <MDBRow>
                         <MDBCol className="col-one center col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6" md="3">
                             <div className="event-cover img-fluid" >
@@ -74,10 +89,9 @@ const Events = () => {
                                 <MDBCardText>
                                     {i.description}
                                 </MDBCardText>
-                                <Link onMouseEnter={() => { setStyles(1, "0, 59, 187,", "rgb(0, 59, 187)") }} onMouseLeave={() => { setStyles(1, "0, 0, 0,", "#00FFFF") }} to="" className="add-button" onClick={() => addEvent(i.title)}>Add to Calendar</Link>
-                                {i.online_link ? <a onMouseEnter={() => { setStyles(1, "6, 187, 0,", "rgb(6, 187, 0)") }} onMouseLeave={() => { setStyles(1, "0, 0, 0,", "#00FFFF") }} className="my-button2" href={i.online_link}>Join now!</a> : ""}
-                                <Link onMouseEnter={() => { setStyles(1, "255, 123, 0,", "rgb(255, 123, 0)") }} onMouseLeave={() => { setStyles(1, "0, 0, 0,", "#00FFFF") }} to="" className="my-button2" onClick={() => deleteEvent(i._id)}>Delete</Link>
-
+                                <Link onMouseEnter={() => { setStyles(1, "89, 198, 255,", "rgb(89, 198, 255)","89, 198, 255,") }} onMouseLeave={() => { setStyles(1, "0, 0, 0,", "#00FFFF", "0, 247, 255,") }} to="" className="add-button" onClick={() => addEvent(i.title)}>Add to Calendar</Link>
+                                {i.online_link ? <a onMouseEnter={() => { setStyles(1, "0, 255, 172,", "rgb(0, 255, 172)","0, 255, 172,") }} onMouseLeave={() => { setStyles(1, "0, 0, 0,", "#00FFFF", "0, 247, 255,") }} className="my-button2" href={i.online_link}>Join now!</a> : ""}
+                                <Link onMouseEnter={() => { setStyles(1, "255, 234, 161,", "rgb(255, 234, 161)","255, 234, 161,") }} onMouseLeave={() => { setStyles(1, "0, 0, 0,", "#00FFFF", "0, 247, 255,") }} to="" className="my-button3" onClick={() => deleteEvent(i._id)}>Delete</Link>
                             </MDBCardBody>
                         </MDBCol>
                     </MDBRow>
@@ -90,13 +104,14 @@ const Events = () => {
 
         <React.Fragment>
             <Navbar MainColor={mainColor} />
-            <div className="blur-container">
+            <div id="blur-container" className={classes.blurContainer}>
 
                 <div className={classes.testDiv} >
                     <br />
                     {eventItem}
                 </div>
             </div>
+            <Footer MainColor={mainColor} />
         </React.Fragment>
     );
 }

@@ -1,7 +1,6 @@
 .my-footer{
     margin-top: 50px !important;
     margin-bottom: 50px !important;
-    border-top: solid #00FFFF 1px;
     width: 100%;
     margin: auto;
     font-family: Spirax;
@@ -12,7 +11,6 @@
 }
 
 .fab{
-    color: #00FFFF;
     font-size: 25px;
     margin-left: 10px;
     margin-right: 10px;

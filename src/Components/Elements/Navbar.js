@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import './Navbar.css';
 const Navbar = props => {
 
+    
+
     const Redirect = () => {
         window.location.href = "/";
     }

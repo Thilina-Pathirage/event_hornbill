@@ -9,7 +9,7 @@ const Footer = props => {
             </div>
             <div className="my-footer"
                 style={{
-                    borderTop: `solid ${props.MainColor} 1px`,
+                    borderTop: `solid #00FFFF 1px`,
                     transitionDuration: "0.5s"
                 }}
             >
@@ -17,21 +17,21 @@ const Footer = props => {
                 <div className="social-icons">
                     <i className="fab fa-linkedin"
                         style={{
-                            color: `${props.MainColor}`,
+                            color: `#00FFFF`,
                             transitionDuration: "0.5s"
 
                         }}
                     ></i>
                     <i className="fab fa-github-square"
                         style={{
-                            color: `${props.MainColor}`,
+                            color: `#00FFFF`,
                             transitionDuration: "0.5s"
 
                         }}
                     ></i>
                     <i className="fab fa-twitter-square"
                         style={{
-                            color: `${props.MainColor}`,
+                            color: `#00FFFF`,
                             transitionDuration: "0.5s"
 
                         }}

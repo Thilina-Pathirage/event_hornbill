@@ -5,12 +5,9 @@ import './Events.css';
 import { Link } from 'react-router-dom';
 import CoverImage from '../images/eventcover.png';
 import { makeStyles } from '@material-ui/core/styles';
-import Navbar from '../Elements/Navbar';
-import Footer from '../Elements/Footer';
 
 const Events = () => {
 
-    const [bgColor, setBgColor] = useState("0, 0, 0,");
     const [bgColorCard, setBgColorCard] = useState("0, 247, 255,");
 
     const [opacity, setOpacity] = useState(1);
@@ -20,8 +17,7 @@ const Events = () => {
 
         "@global": {
             body: {
-                backgroundImage: `linear-gradient(to left, #000,#000, #000, rgb(0, 0, 0, 0) )`,
-                backgroundColor: `rgb( ${bgColor} ${opacity})`,
+                backgroundColor: `#000`,
                 transitionDuration: "0.5s",
             },
         },
@@ -51,7 +47,6 @@ const Events = () => {
     const classes = useStyles();
 
     const setStyles = (Opc, bg, mColor, bgCard) => {
-        setBgColor(bg);
         setOpacity(Opc);
         setMainColor(mColor);
         setBgColorCard(bgCard);
@@ -67,11 +62,11 @@ const Events = () => {
     }, []);
 
     const deleteEvent = (id) => {
-        Axios.delete(`https://event-portal-thilina.herokuapp.com/delete/${id}`).then(Redirect);
+        Axios.delete(`https://event-portal-thilina.herokuapp.com/delete/${id}`).then(Redirect2);
     }
 
-    const Redirect = () => {
-        window.location.href = "/events";
+    const Redirect2 = () => {
+        window.location.href = "/";
     }
 
     const addEvent = (title, timezone, description, location) => {
@@ -113,7 +108,6 @@ const Events = () => {
     return (
 
         <React.Fragment>
-            <Navbar MainColor={mainColor} />
             <div id="blur-container" className={classes.blurContainer}>
 
                 <div className={classes.testDiv} >
@@ -121,7 +115,6 @@ const Events = () => {
                     {eventItem}
                 </div>
             </div>
-            <Footer MainColor={mainColor} />
         </React.Fragment>
     );
 }

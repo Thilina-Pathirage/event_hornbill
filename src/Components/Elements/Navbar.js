@@ -17,14 +17,14 @@ const Navbar = props => {
         <div>
             <div className="d2 nav-outer center"
                 style={{
-                    borderBottom: `solid ${props.MainColor} 1px`,
-                    borderLeft: `solid ${props.MainColor} 1px`,
+                    borderBottom: `solid #00FFFF 1px`,
+                    borderLeft: `solid #00FFFF 1px`,
                     transitionDuration: "0.5s"
                 }}
             >
                 <h1>Event Hornbill <i className="far fa-user-circle"
                     style={{
-                        color: `${props.MainColor}`,
+                        color: `#00FFFF`,
                         transitionDuration: "0.5s"
                         ,
                     }}

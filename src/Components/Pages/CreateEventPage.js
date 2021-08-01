@@ -3,8 +3,6 @@ import { MDBRow, MDBCol } from 'mdb-react-ui-kit'
 import { useState } from 'react';
 import Axios from 'axios';
 import { makeStyles } from '@material-ui/core/styles';
-import Navbar from '../Elements/Navbar';
-import Footer from '../Elements/Footer';
 import React from 'react';
 
 
@@ -74,16 +72,18 @@ const CreateNewEvent = () => {
     const addToList = () => {
 
         Axios.post("https://event-portal-thilina.herokuapp.com/", {
-            title: title,
-            location: location,
-            timezone: timezone,
-            start_date: start_date,
-            end_date: end_date,
-            start_time: start_time,
-            end_time: end_time,
-            online_link: online_link,
-            description: description,
+            title: title ? title: "Title",
+            location: location ? "location": "location",
+            timezone: timezone ? "timezone": "timezone",
+            start_date: start_date ? "start_date": "start_date",
+            end_date: end_date ? "end_date": "end_date",
+            start_time: start_time ? "start_time": "start_time",
+            end_time: end_time ? "end_time": "end_time",
+            online_link: online_link ? "online_link": "online_link",
+            description: description ? "description": "description",
         }).then(Redirect);
+
+        // alert(description)
     }
 
     const Redirect = () => {
@@ -92,18 +92,17 @@ const CreateNewEvent = () => {
 
     return (
         <React.Fragment>
-            <Navbar MainColor="#00FFFF" />
             <div id="blur-container" className={classes.blurContainer}>
 
                 <div className="form-card center-no-text" >
                     <div className="form-div">
-                        <form onSubmit={addToList}>
+                        <form>
                             <MDBRow>
                                 <MDBCol>
                                     <label className="label-text">
                                         Event title here!
                                     </label>
-                                    <input type="text" className="form-control" placeholder="My Event" onChange={titleHandler} required />
+                                    <input type="text" className="form-control" placeholder="My Event" onChange={titleHandler}  />
                                     <br />
                                 </MDBCol>
                             </MDBRow>
@@ -113,7 +112,7 @@ const CreateNewEvent = () => {
                                     <label className="label-text">
                                         Event location
                                     </label>
-                                    <input type="text" className="form-control" placeholder="Sri Lanka" onChange={locationHandler} required />
+                                    <input type="text" className="form-control" placeholder="Sri Lanka" onChange={locationHandler}  />
                                     <br />
                                 </MDBCol>
 
@@ -121,7 +120,7 @@ const CreateNewEvent = () => {
                                     <label className="label-text">
                                         The timezone
                                     </label>
-                                    <select className="form-control" onChange={timezoneHandler} required>
+                                    <select className="form-control" onChange={timezoneHandler} >
                                         <option> - select - </option>
                                         <option value="Asia/Colombo" className={classes.zone}>Asia/Colombo</option>
                                     </select>
@@ -134,13 +133,13 @@ const CreateNewEvent = () => {
                                     <label className="label-text">
                                         Start Date
                                     </label>
-                                    <input type="date" className="form-control" onChange={startDateHandler} required />
+                                    <input type="date" className="form-control" onChange={startDateHandler}  />
                                     <br />
 
                                     <label className="label-text">
                                         Start Time
                                     </label>
-                                    <input type="time" className="form-control" onChange={startTimeHandler} required />
+                                    <input type="time" className="form-control" onChange={startTimeHandler}  />
                                     <br />
                                 </MDBCol>
 
@@ -148,13 +147,13 @@ const CreateNewEvent = () => {
                                     <label className="label-text">
                                         End Date
                                     </label>
-                                    <input type="date" className="form-control" onChange={endDateHandler} required />
+                                    <input type="date" className="form-control" onChange={endDateHandler}  />
                                     <br />
 
                                     <label className="label-text">
                                         End Time
                                     </label>
-                                    <input type="time" className="form-control" onChange={endTimeHandler} required />
+                                    <input type="time" className="form-control" onChange={endTimeHandler}  />
                                     <br />
                                 </MDBCol>
                             </MDBRow>
@@ -164,7 +163,7 @@ const CreateNewEvent = () => {
                                     <label className="label-text">
                                         Event link here
                                     </label>
-                                    <input type="text" className="form-control" placeholder="Online Link" onChange={onlineLinkHandler} required />
+                                    <input type="text" className="form-control" placeholder="Online Link" onChange={onlineLinkHandler} />
                                     <br />
                                 </MDBCol>
                             </MDBRow>
@@ -174,17 +173,16 @@ const CreateNewEvent = () => {
                                     <label className="label-text">
                                         Say something about your event!
                                     </label>
-                                    <textarea className="form-control" placeholder="Woohaaa.." onChange={descriptionHandler} required>
+                                    <textarea className="form-control" placeholder="Woohaaa.." onChange={descriptionHandler} >
                                     </textarea>
                                     <br />
                                 </MDBCol>
                             </MDBRow>
-                            <input className="create-button center" type="submit" value="Create Now!" />
+                            <input className="create-button center" type="submit" onClick={addToList}  value="Create Now!" /> 
                         </form>
                     </div>
                 </div>
             </div>
-            <Footer MainColor="#00FFFF" />
 
         </React.Fragment>
     );

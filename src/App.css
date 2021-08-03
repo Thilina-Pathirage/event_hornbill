@@ -10,6 +10,18 @@
 	justify-content: center !important;
 	align-items: center !important;
   }
+  
+
+div.loadingDiv {
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	align-items: center;
+	width: 100%;
+	height: 100vh;
+}
+
 
 #blur-container{
   width: 100%;

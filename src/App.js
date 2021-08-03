@@ -5,30 +5,53 @@ import CreateNewEvent from './Components/Pages/CreateEventPage';
 import { MDBContainer } from 'mdb-react-ui-kit'
 import Navbar from './Components/Elements/Navbar';
 import Footer from './Components/Elements/Footer';
+import React, { useState, useEffect } from 'react';
+import { MagicSpinner } from "react-spinners-kit";
+
 
 function App() {
+
+  const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    setLoading(true)
+    setTimeout(() => {
+      setLoading(false)
+    }, 8000)
+  }, [])
+
   return (
+
     <Router>
-      <MDBContainer>
-      <Navbar/>
+      {
+        loading ?
+          <div className="loadingDiv">
+            <MagicSpinner size={80} color="#00FFFF" loading={loading} />
+          </div> :
 
-        <main>
-            <Switch>
-              <Route path={"/create"} exact>
-                <CreateNewEvent />
-              </Route>
+          <MDBContainer>
+            <Navbar />
 
-              <Route path={"/"} exact>
-                <Events />
-              </Route>
+            <main>
+              <Switch>
+                <Route path={"/create"} exact>
+                  <CreateNewEvent />
+                </Route>
 
-              <Redirect to={"/"} />
-            </Switch>
-        </main>
-        <Footer/>
+                <Route path={"/"} exact>
+                  <Events />
+                </Route>
 
-      </MDBContainer>
+                <Redirect to={"/"} />
+              </Switch>
+            </main>
+            <Footer />
+
+          </MDBContainer>
+      }
+
     </Router>
+
 
   );
 }

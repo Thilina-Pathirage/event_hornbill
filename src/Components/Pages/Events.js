@@ -54,7 +54,7 @@ const Events = () => {
 
     const [events, setEvents] = useState([]);
     useEffect(() => {
-        Axios.get("https://event-portal-thilina.herokuapp.com/events").then(res => {
+        Axios.get("http://localhost:3001/events").then(res => {
             setEvents(res.data);
         }).catch(err => {
             console.log(err);

@@ -5,13 +5,13 @@ const Navbar = props => {
 
     
 
-    const Redirect = () => {
-        window.location.href = "/";
-    }
+    // const Redirect = () => {
+    //     window.location.href = "/";
+    // }
 
-    const Redirect2 = () => {
-        window.location.href = "/create";
-    }
+    // const Redirect2 = () => {
+    //     window.location.href = "/create";
+    // }
 
     return (
         <div>
@@ -32,10 +32,10 @@ const Navbar = props => {
             </div>
             <ul className="cu-nav-items" >
                 <li className="cu-item">
-                    <Link onClick={Redirect} to="/">All Events</Link>
+                    <Link to="/">All Events</Link>
                 </li>
                 <li className="cu-item">
-                    <Link onClick={Redirect2} to="/create">Create Event</Link>
+                    <Link  to="/create">Create Event</Link>
                 </li>
             </ul>
         </div>

@@ -71,19 +71,43 @@ const CreateNewEvent = () => {
 
     const addToList = () => {
 
-        Axios.post("https://event-portal-thilina.herokuapp.com/", {
-            title: title ? title: "Title",
-            location: location ? "location": "location",
-            timezone: timezone ? "timezone": "timezone",
-            start_date: start_date ? "start_date": "start_date",
-            end_date: end_date ? "end_date": "end_date",
-            start_time: start_time ? "start_time": "start_time",
-            end_time: end_time ? "end_time": "end_time",
-            online_link: online_link ? "online_link": "online_link",
-            description: description ? "description": "description",
-        }).then(Redirect);
-
-        // alert(description)
+        if (title === "") {
+            alert("title field cannot be empty!");
+        }
+        else if (location === "") {
+            alert("location field cannot be empty!");
+        }
+        else if (timezone === "") {
+            alert("timezone field cannot be empty!");
+        }
+        else if (start_date === "") {
+            alert("start_date field cannot be empty!");
+        }
+        else if (end_date === "") {
+            alert("end_date field cannot be empty!");
+        }
+        else if (start_time === "") {
+            alert("start_time field cannot be empty!");
+        }
+        else if (end_time === "") {
+            alert("end_time field cannot be empty!");
+        }
+        else if (description === "") {
+            alert("description field cannot be empty!");
+        }
+        else {
+            Axios.post("http://localhost:3001/", {
+                title: title ? title : "Title",
+                location: location ? location : "empty",
+                timezone: timezone ? timezone : "empty",
+                start_date: start_date ? start_date : "empty",
+                end_date: end_date ? end_date : "empty",
+                start_time: start_time ? start_time : "empty",
+                end_time: end_time ? end_time : "empty",
+                online_link: online_link ? online_link : "",
+                description: description ? description : "empty",
+            }).then(Redirect);
+        }
     }
 
     const Redirect = () => {
@@ -102,7 +126,7 @@ const CreateNewEvent = () => {
                                     <label className="label-text">
                                         Event title here!
                                     </label>
-                                    <input type="text" className="form-control" placeholder="My Event" onChange={titleHandler}  />
+                                    <input type="text" className="form-control" placeholder="My Event" onChange={titleHandler} />
                                     <br />
                                 </MDBCol>
                             </MDBRow>
@@ -112,7 +136,7 @@ const CreateNewEvent = () => {
                                     <label className="label-text">
                                         Event location
                                     </label>
-                                    <input type="text" className="form-control" placeholder="Sri Lanka" onChange={locationHandler}  />
+                                    <input type="text" className="form-control" placeholder="Sri Lanka" onChange={locationHandler} />
                                     <br />
                                 </MDBCol>
 
@@ -133,13 +157,13 @@ const CreateNewEvent = () => {
                                     <label className="label-text">
                                         Start Date
                                     </label>
-                                    <input type="date" className="form-control" onChange={startDateHandler}  />
+                                    <input type="date" className="form-control" onChange={startDateHandler} />
                                     <br />
 
                                     <label className="label-text">
                                         Start Time
                                     </label>
-                                    <input type="time" className="form-control" onChange={startTimeHandler}  />
+                                    <input type="time" className="form-control" onChange={startTimeHandler} />
                                     <br />
                                 </MDBCol>
 
@@ -147,13 +171,13 @@ const CreateNewEvent = () => {
                                     <label className="label-text">
                                         End Date
                                     </label>
-                                    <input type="date" className="form-control" onChange={endDateHandler}  />
+                                    <input type="date" className="form-control" onChange={endDateHandler} />
                                     <br />
 
                                     <label className="label-text">
                                         End Time
                                     </label>
-                                    <input type="time" className="form-control" onChange={endTimeHandler}  />
+                                    <input type="time" className="form-control" onChange={endTimeHandler} />
                                     <br />
                                 </MDBCol>
                             </MDBRow>
@@ -178,8 +202,9 @@ const CreateNewEvent = () => {
                                     <br />
                                 </MDBCol>
                             </MDBRow>
-                            <input className="create-button center" type="submit" onClick={addToList}  value="Create Now!" /> 
+
                         </form>
+                        <input className="create-button center" type="submit" onClick={addToList} value="Create Now!" />
                     </div>
                 </div>
             </div>

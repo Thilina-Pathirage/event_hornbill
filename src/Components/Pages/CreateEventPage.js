@@ -96,7 +96,7 @@ const CreateNewEvent = () => {
             alert("description field cannot be empty!");
         }
         else {
-            Axios.post("http://localhost:3001/", {
+            Axios.post("https://event-portal-thilina.herokuapp.com/", {
                 title: title ? title : "Title",
                 location: location ? location : "empty",
                 timezone: timezone ? timezone : "empty",
